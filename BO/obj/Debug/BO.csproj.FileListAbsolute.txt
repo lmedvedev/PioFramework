@@ -1,0 +1,9 @@
+C:\Projects\PioFramework\BO\bin\Debug\BO.dll
+C:\Projects\PioFramework\BO\bin\Debug\BO.pdb
+C:\Projects\PioFramework\BO\bin\Debug\DA.dll
+C:\Projects\PioFramework\BO\bin\Debug\DA.pdb
+C:\Projects\PioFramework\BO\obj\Debug\BO.csprojResolveAssemblyReference.cache
+C:\Projects\PioFramework\BO\obj\Debug\BO.Properties.Resources.resources
+C:\Projects\PioFramework\BO\obj\Debug\BO.csproj.GenerateResource.Cache
+C:\Projects\PioFramework\BO\obj\Debug\BO.dll
+C:\Projects\PioFramework\BO\obj\Debug\BO.pdb

@@ -1,0 +1,52 @@
+﻿body
+{
+	font-family: Verdana;
+	font-size: small;
+}
+.dropTextCell
+{
+	padding-left: 5px;
+}
+.dropImageCell
+{
+	padding: 1px 1px 1px 1px;
+}
+.dropContainer
+{
+	position: absolute;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 2px 2px 2px 2px;
+}
+.dropDownItem
+{
+	background-color: White;
+	color: #385880;
+	cursor: default;
+	font-size: small;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: block;
+	padding: 1px 1px 1px 1px;
+}
+.dropDownItemHover
+{
+	background-color: #385880;
+	color: White;
+	cursor: default;
+	white-space: nowrap;
+	font-size: small;
+}
+.dropDownItem:hover
+{
+	background-color: #385880;
+	color: White;
+	cursor: default;
+	white-space: nowrap;
+	font-size: small;
+}
+.dropDownImage
+{
+	cursor: pointer;
+}

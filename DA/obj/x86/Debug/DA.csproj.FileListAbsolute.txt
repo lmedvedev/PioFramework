@@ -1,0 +1,6 @@
+C:\Projects\PioFramework\DA\bin\x86\Debug\DA.dll.config
+C:\Projects\PioFramework\DA\bin\x86\Debug\DA.dll
+C:\Projects\PioFramework\DA\bin\x86\Debug\DA.pdb
+C:\Projects\PioFramework\DA\obj\x86\Debug\DA.dll
+C:\Projects\PioFramework\DA\obj\x86\Debug\DA.pdb
+C:\Projects\PioFramework\DA\obj\x86\Debug\DA.csprojResolveAssemblyReference.cache

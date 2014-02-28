@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema id="ReportsInfo.xsd"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://ReportsInfo.xsd"
+  targetNamespace="http://ReportsInfo.xsd"
+  version="1.0"
+>
+
+  <xsd:element name="Report" type="reportInfo"/>
+
+
+  <xsd:complexType name="reportInfo">
+    <xsd:choice maxOccurs="unbounded">
+      <xsd:element name="text" type="textInfo" minOccurs="0"/>
+      <xsd:element name="img" type="imgInfo" minOccurs="0"/>
+      <xsd:element name="check" type="checkInfo" minOccurs="0"/>
+    </xsd:choice>
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+    <xsd:attribute name="modified" type="xsd:dateTime" use="optional"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="textInfo">
+    <xsd:simpleContent>
+      <xsd:extension base="itemInfo">
+        <xsd:attribute name="align" type="alignType" use="required"/>
+        <xsd:attribute name="valign" type="valignType" use="required"/>
+        <xsd:attribute name="fore-color" type="colorType" default="000000"/>
+        <xsd:attribute name="back-color" type="colorType" default="FFFFFF"/>
+        <xsd:attribute name="font-name" type="xsd:string" default="Arial"/>
+        <xsd:attribute name="font-size" type="xsd:float" default="8"/>
+        <xsd:attribute name="font-bold" type="xsd:boolean" default="false"/>
+        <xsd:attribute name="font-italic" type="xsd:boolean" default="false"/>
+        <xsd:attribute name="font-underline" type="xsd:boolean" default="false"/>
+        <xsd:attribute name="no-wrap" type="xsd:boolean" default="false"/>
+        <xsd:attribute name="border" type="borderType" />
+        <xsd:attribute name="border-color" type="borderColorType"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="checkInfo">
+    <xsd:simpleContent>
+      <xsd:extension base="itemInfo"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="itemInfo" abstract="true">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="group" type="xsd:string" use="optional"/>
+        <xsd:attribute name="left" type="xsd:float" use="required"/>
+        <xsd:attribute name="top" type="xsd:float" use="required"/>
+        <xsd:attribute name="width" type="xsd:float" use="required"/>
+        <xsd:attribute name="height" type="xsd:float" use="required"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="imgInfo">
+    <xsd:simpleContent>
+      <xsd:extension base="itemInfo">
+        <xsd:attribute name="align" type="alignType" default="Left"/>
+        <xsd:attribute name="valign" type="valignType" default="Top"/>
+        <xsd:attribute name="fore-color" type="colorType" default="000000"/>
+        <xsd:attribute name="back-color" type="colorType" default="FFFFFF"/>
+        <xsd:attribute name="font-name" type="xsd:string" default="Arial"/>
+        <xsd:attribute name="font-size" type="xsd:float" default="8"/>
+        <xsd:attribute name="font-bold" type="xsd:boolean" default="false"/>
+        <xsd:attribute name="font-italic" type="xsd:boolean" default="false"/>
+        <xsd:attribute name="font-underline" type="xsd:boolean" default="false"/>
+        <xsd:attribute name="src" type="xsd:string" default=""/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <xsd:simpleType name='borderType'>
+    <xsd:restriction base='listOfFloats'>
+      <xsd:minLength value="4"/>
+      <xsd:maxLength value='4'/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="listOfFloats">
+    <xsd:list itemType="xsd:float"/>
+  </xsd:simpleType>
+
+  <xsd:simpleType name='borderColorType'>
+    <xsd:restriction base='listOfColors'>
+      <xsd:minLength value="4"/>
+      <xsd:maxLength value='4'/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="listOfColors">
+    <xsd:list itemType="colorType"/>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="colorType">
+    <xsd:restriction base="xsd:hexBinary">
+      <xsd:length value="3" fixed="true"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+  <xsd:simpleType name="alignType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Left"/>
+      <xsd:enumeration value="Center"/>
+      <xsd:enumeration value="Right"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="valignType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Top"/>
+      <xsd:enumeration value="Center"/>
+      <xsd:enumeration value="Bottom"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+</xsd:schema>

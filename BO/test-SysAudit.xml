@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<t:Audit xmlns:t="http://BO/SysAudit.xsd" OperType="INSERT" id="476" table="Demand">
+  <field column="id">
+    <n>476</n>
+  </field>
+  <field column="DocGUID">
+    <n>D6CA0DFC-3965-4A97-8780-84B6024FA207</n>
+  </field>
+  <field column="DocDate">
+    <n>2007-08-14 16:11:00.000</n>
+  </field>
+  <field column="DocNum">
+    <n>2M00102009</n>
+  </field>
+  <field column="DocType">
+    <n>PUR</n>
+  </field>
+  <field column="DocHashCode">
+    <n>D24E97C6</n>
+  </field>
+  <field column="Client">
+    <n>Воронина Ольга Владимировна</n>
+  </field>
+  <field column="Point_id">
+    <n>1516</n>
+  </field>
+  <field column="Fund_id">
+    <n>18</n>
+  </field>
+  <field column="XmlContent">
+    <n>
+      <PUR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" GUID="d6ca0dfc39654a97878084b6024fa207" DT="2007-08-14T16:11:00" HASH="D24E97C6">
+        <Agent Code="2223">
+          <Name>Газетный д.5</Name>
+        </Agent>
+        <Account IsNew="true">
+          <AccountType>Счёт владельца</AccountType>
+          <Fund Code="M">
+            <Name>ОПИФ акций «Металлургия и машиностроение»</Name>
+            <FullName>Открытый паевой инвестиционный фонд акций «ПИОГЛОБАЛ – Металлургия и машиностроение» под управлением ЗАО «Пиоглобал Эссет Менеджмент»</FullName>
+            <Company>ПИОГЛОБАЛ</Company>
+          </Fund>
+          <DeliveryType>В пункте приёма документов</DeliveryType>
+        </Account>
+        <ClientPerson>
+          <Person>
+            <Name>Воронина Ольга Владимировна</Name>
+            <Country>Россия</Country>
+            <RegAddress>Россия, г. Москва, ул. Новочеремушкинская, д. 60, корп. 1, кв. 78</RegAddress>
+            <PostAddress>Россия, г. Москва, ул. Новочеремушкинская, д. 60, корп. 1, кв. 78</PostAddress>
+            <Phone>+7 495 775 51 00</Phone>
+            <BirthDate>1965-02-22</BirthDate>
+            <AbilityType>Полностью дееспособно</AbilityType>
+            <Identity IdentityType="Паспорт гражданина РФ">
+              <Seria>45 97</Seria>
+              <Number>023151</Number>
+              <IssueDate>1998-03-31</IssueDate>
+              <Issuer>ОВД "Черемушки" гор. Москвы, код подразделения 772-076</Issuer>
+            </Identity>
+          </Person>
+        </ClientPerson>
+        <Docs>
+          <Doc Code="PRF">Заявка на приобретение</Doc>
+          <Doc Code="ANF">Анкета</Doc>
+          <Doc Code="ACF">Заявление на открытие счета</Doc>
+        </Docs>
+        <Number>2M00102009</Number>
+      </PUR>
+    </n>
+  </field>
+  <field column="HashCodeReal">
+    <n>D24E97C6</n>
+  </field>
+  <field column="InventoryInbox_id">
+    <n>73</n>
+  </field>
+  <field column="SysUser">
+    <n>PIOGMOW\SVoyueva</n>
+  </field>
+  <field column="SysDate">
+    <n>2007-08-16 19:05:05.333</n>
+  </field>
+</t:Audit>

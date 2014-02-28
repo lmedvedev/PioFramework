@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<s:Vars xmlns:s="http://RepDataInfo.xsd"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+>
+  <varType TypeName="testTypeInfo">
+    <var propname="cl_fl_full_name" err="Err!" >
+      <CALC oper="add">
+        <NValue property="adb.sdf.wer" isnull="0"/>
+        <NConst val="123.23"/>
+      </CALC>
+    </var>
+    <var propname="qwe">
+      <SConst val="test string"/>
+    </var>
+    <var propname="rty">
+      <IF>
+        <cond>
+          <NOT>
+            <ISNULL>
+              <SValue property="iop"/>
+            </ISNULL>
+          </NOT>
+        </cond>
+        <then>
+          <CALC oper="mul">
+            <CALC oper="add" err="!!!">
+              <SValue property="sss"/>
+              <SValue property ="www"/>
+            </CALC>
+            <NConst val="23456"/>
+          </CALC>
+        </then>
+        <else>
+          <SConst val="654"/>
+        </else>
+      </IF>
+    </var>
+  </varType>
+</s:Vars>

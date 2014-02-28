@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="RepDataInfo"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://RepDataInfo.xsd"
+  targetNamespace="http://RepDataInfo.xsd"
+  version="1.0"
+>
+  <xs:element name="Vars">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="varType" type="varTypeInfo" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType  name="varTypeInfo">
+    <xs:sequence>
+      <xs:element name="var" type="varInfo" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="TypeName" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="varInfo">
+    <xs:complexContent>
+      <xs:extension base="evalBase">
+        <xs:group ref="evalItem"/>
+        <xs:attribute name="propname" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="evalInfo">
+    <xs:group ref="evalItem"/>
+  </xs:complexType>
+
+  <xs:group name="evalItem">
+    <xs:choice>
+      <xs:element name="CALC" type="evalCALCType"/>
+      <xs:element name="IF" type="evalIFType"/>
+      <xs:element name="SValue" type="evalStringValueType"/>
+      <xs:element name="NValue" type="evalNumberValueType"/>
+      <xs:element name="DValue" type="evalDateValueType"/>
+      <xs:element name="NConst" type="evalNumberType"/>
+      <xs:element name="SConst" type="evalStringType"/>
+      <xs:element name="DConst" type="evalDateType"/>
+      <xs:element name="BConst" type="evalBoolType"/>
+      <xs:element name="SFormat" type="evalSFormatType"/>
+      <xs:element name="Array" type="evalArrayType"/>
+    </xs:choice>
+  </xs:group>
+
+  <xs:complexType name="evalBase" abstract="true">
+    <xs:attribute name="err"/>
+  </xs:complexType>
+
+  <xs:complexType name="evalCALCType">
+    <xs:complexContent>
+      <xs:extension base="evalBase">
+        <xs:group ref="evalItem" minOccurs="2" maxOccurs="2"/>
+        <xs:attribute name="oper" type="arOperEnum" use ="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:simpleType name="arOperEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="add"/>
+      <xs:enumeration value="sub"/>
+      <xs:enumeration value="mul"/>
+      <xs:enumeration value="div"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="evalIFType">
+    <xs:complexContent>
+      <xs:extension base="evalBase">
+        <xs:sequence>
+          <xs:element name="cond" type="condInfo"/>
+          <xs:element name="then" type="evalInfo"/>
+          <xs:element name="else" type="evalInfo"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="evalValueType">
+    <xs:complexContent>
+      <xs:extension base="evalBase">
+        <xs:attribute name="property" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="evalStringValueType">
+    <xs:complexContent>
+      <xs:extension base="evalValueType">
+        <xs:attribute name="isnull" type="xs:string" default=""/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="evalArrayType">
+    <xs:complexContent>
+      <xs:extension base="evalValueType">
+        <xs:attribute name="isnull" type="xs:string" default=""/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="evalNumberValueType">
+    <xs:complexContent>
+      <xs:extension base="evalValueType">
+        <xs:attribute name="isnull" type="xs:double" default="0"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="evalDateValueType">
+    <xs:complexContent>
+      <xs:extension base="evalValueType">
+        <xs:attribute name="isnull" type="xs:dateTime" default="0001-01-01T00:00:00"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="evalBoolValueType">
+    <xs:complexContent>
+      <xs:extension base="evalValueType">
+        <xs:attribute name="isnull" type="xs:boolean" default="false"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="evalNumberType">
+    <xs:complexContent>
+      <xs:extension base="evalBase">
+        <xs:attribute name="val" type ="xs:double"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="evalStringType">
+    <xs:complexContent>
+      <xs:extension base="evalBase">
+        <xs:attribute name="val" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="evalSFormatType">
+    <xs:complexContent>
+      <xs:extension base="evalBase">
+        <xs:attribute name="val" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="evalDateType">
+    <xs:complexContent>
+      <xs:extension base="evalBase">
+        <xs:attribute name="val" type ="xs:dateTime"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="evalBoolType">
+    <xs:complexContent>
+      <xs:extension base="evalBase">
+        <xs:attribute name="val" type ="xs:boolean"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="condInfo">
+    <xs:group ref="boolItem"/>
+  </xs:complexType>
+
+  <xs:group name="boolItem">
+    <xs:choice>
+      <xs:element name="EQ" type="condEQType"/>
+      <xs:element name="LT" type="condLTType"/>
+      <xs:element name="LE" type="condLEType"/>
+      <xs:element name="GT" type="condGTType"/>
+      <xs:element name="GE" type="condGEType"/>
+      <xs:element name="ISNULL" type="condISNULLType"/>
+
+      <xs:element name="OR" type="condORType"/>
+      <xs:element name="NOT" type="condNOTType"/>
+      <xs:element name="AND" type="condANDType"/>
+      <xs:element name="LIKE" type="condLIKEType"/>
+    </xs:choice>
+  </xs:group>
+
+  <xs:complexType name="condBase" abstract="true"/>
+
+  <xs:complexType name="condEQType">
+    <xs:complexContent>
+      <xs:extension base="condBase">
+        <xs:group ref="evalItem" minOccurs="2" maxOccurs="2"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="condLTType">
+    <xs:complexContent>
+      <xs:extension base="condBase">
+        <xs:group ref="evalItem" minOccurs="2" maxOccurs="2"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="condLEType">
+    <xs:complexContent>
+      <xs:extension base="condBase">
+        <xs:group ref="evalItem" minOccurs="2" maxOccurs="2"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="condGTType">
+    <xs:complexContent>
+      <xs:extension base="condBase">
+        <xs:group ref="evalItem" minOccurs="2" maxOccurs="2"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="condGEType">
+    <xs:complexContent>
+      <xs:extension base="condBase">
+        <xs:group ref="evalItem" minOccurs="2" maxOccurs="2"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="condISNULLType">
+    <xs:complexContent>
+      <xs:extension base="condBase">
+        <xs:group ref="evalItem" minOccurs="1" maxOccurs="1"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="condORType">
+    <xs:complexContent>
+      <xs:extension base="condBase">
+        <xs:group ref="boolItem" minOccurs="2" maxOccurs="unbounded"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="condNOTType">
+    <xs:complexContent>
+      <xs:extension base="condBase">
+        <xs:group ref="boolItem" minOccurs="1"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="condANDType">
+    <xs:complexContent>
+      <xs:extension base="condBase">
+        <xs:group ref="boolItem" minOccurs="2" maxOccurs="unbounded"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="condLIKEType">
+    <xs:complexContent>
+      <xs:extension base="condBase">
+        <xs:group ref="evalItem" minOccurs="2" maxOccurs="2"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="condType">
+    <xs:complexContent>
+      <xs:extension base="condBase">
+        <xs:attribute name="prop" type="xs:string" use="required"/>
+        <xs:attribute name="value" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+</xs:schema>

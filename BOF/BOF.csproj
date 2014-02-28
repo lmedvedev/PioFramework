@@ -1,0 +1,769 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{015447FF-E9DE-480C-A2C3-E562583FE0D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BOF</RootNamespace>
+    <AssemblyName>BOF</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>BOF_key.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+    <PublishUrl>http://localhost/BOF/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="2008\ListController2.cs" />
+    <Compile Include="2008\OKCancelForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2008\OKCancelForm2.Designer.cs">
+      <DependentUpon>OKCancelForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chooser\ChooserController.cs" />
+    <Compile Include="Chooser\ChooserEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chooser\DropDownController.cs" />
+    <Compile Include="Chooser\DropDownFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chooser\DropDownGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Chooser\DropDownGridStatus.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Chooser\DropDownTreeCardsController.cs" />
+    <Compile Include="Chooser\IDropDownControl.cs" />
+    <Compile Include="Controllers\BindingListController.cs" />
+    <Compile Include="Controllers\CardControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\CardControlBase.Designer.cs">
+      <DependentUpon>CardControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\CardGridChooserController.cs" />
+    <Compile Include="Controllers\CardGridController.cs" />
+    <Compile Include="Controllers\ContexMenuController.cs" />
+    <Compile Include="Controllers\ContexMenuRtfController.cs" />
+    <Compile Include="Controllers\TreeNFormController.cs" />
+    <Compile Include="Controllers\TreeNController.cs" />
+    <Compile Include="Controllers\TreeNListFormController.cs" />
+    <Compile Include="Controllers\TreeFormController.cs" />
+    <Compile Include="Controllers\TreeDictListFormController.cs" />
+    <Compile Include="Controllers\ListFormControllerBase.cs" />
+    <Compile Include="Controllers\DetailsController.cs" />
+    <Compile Include="Controllers\DetailsListController.cs" />
+    <Compile Include="Controllers\EntityControlController.cs" />
+    <Compile Include="Controllers\FilterController.cs">
+    </Compile>
+    <Compile Include="Controllers\ReportController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\SysAuditController.cs" />
+    <Compile Include="Controllers\TreeListController.cs" />
+    <Compile Include="Controllers\ListController.cs" />
+    <Compile Include="Controllers\ListFormController.cs" />
+    <Compile Include="Controllers\MainFormBaseController.cs" />
+    <Compile Include="Controllers\TreeController.cs" />
+    <Compile Include="Controllers\TreeListFormController.cs" />
+    <Compile Include="Controls\ComboChooserBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlDesigners.cs" />
+    <Compile Include="Controls\CheckedListBoxChooserBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlTreeN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlTreeDict.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlIntString.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlMaskedString.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlLinkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlMask.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlBoolRadio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlBool.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlCaptionPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlChooser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlDatetime.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlDecimal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlDecimalEncrypted.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlField.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlInt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlPicture.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlString.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CtlWebBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SysAuditFilter.cs" />
+    <Compile Include="Controls\SysAuditFilters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\SysAuditFilters.Designer.cs">
+      <DependentUpon>SysAuditFilters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridView\DataGridViewDatCell.cs" />
+    <Compile Include="DataGridView\DataGridViewDatChooser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataGridView\DataGridViewDatColumn.cs" />
+    <Compile Include="DataGridView\DataGridViewDateTimeCell.cs" />
+    <Compile Include="DataGridView\DataGridViewDateTimeColumn.cs">
+    </Compile>
+    <Compile Include="DataGridView\DataGridViewDateTimeEditingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DatBinding.cs" />
+    <Compile Include="Filters\FilterEventsArgs2.cs" />
+    <Compile Include="Filters\CtlFilterDateFromTo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Filters\CtlFilterDateFromTo.Designer.cs">
+      <DependentUpon>CtlFilterDateFromTo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Filters\FilterEventsArgs.cs" />
+    <Compile Include="Filters\FilterHelper.cs" />
+    <Compile Include="Filters\TreeGroups.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CardForm.Designer.cs">
+      <DependentUpon>CardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CardTreeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CardTreeForm.Designer.cs">
+      <DependentUpon>CardTreeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CardTreeFlowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CardTreeFlowForm.Designer.cs">
+      <DependentUpon>CardTreeFlowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CardFlowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CardFlowForm.Designer.cs">
+      <DependentUpon>CardFlowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CardTreeNForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CardTreeNForm.Designer.cs">
+      <DependentUpon>CardTreeNForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DifferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DifferenceForm.Designer.cs">
+      <DependentUpon>DifferenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FilterFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FilterFormBase.Designer.cs">
+      <DependentUpon>FilterFormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExceptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExceptionForm.Designer.cs">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FilterFormFlowBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FilterFormFlowBase.Designer.cs">
+      <DependentUpon>FilterFormFlowBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormHelper.cs" />
+    <Compile Include="Forms\OKCancelDatFlowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OKCancelDatFlowForm.Designer.cs">
+      <DependentUpon>OKCancelDatFlowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReportViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportViewerForm.Designer.cs">
+      <DependentUpon>ReportViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RichTextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RichTextForm.Designer.cs">
+      <DependentUpon>RichTextForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DictForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DictForm.Designer.cs">
+      <DependentUpon>DictForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForm.Designer.cs">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainFormBase.Designer.cs">
+      <DependentUpon>MainFormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OKCancelDatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OKCancelDatForm.Designer.cs">
+      <DependentUpon>OKCancelDatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OKCancelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OKCancelForm.Designer.cs">
+      <DependentUpon>OKCancelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PassPhraseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PassPhraseForm.Designer.cs">
+      <DependentUpon>PassPhraseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysAuditEntityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysAuditEntityForm.Designer.cs">
+      <DependentUpon>SysAuditEntityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WebBrowserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WebBrowserForm.Designer.cs">
+      <DependentUpon>WebBrowserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Controls\ICtlEntity.cs" />
+    <Compile Include="Interfaces\Controls\ICtlList.cs" />
+    <Compile Include="Interfaces\Controls\ICtlTree.cs" />
+    <Compile Include="Interfaces\ILoadFilter.cs" />
+    <Compile Include="Interfaces\ILoadFilterForm.cs" />
+    <Compile Include="Interfaces\ILoadFilterControl.cs" />
+    <Compile Include="Interfaces\IAllowGrid.cs" />
+    <Compile Include="Interfaces\ICaption.cs" />
+    <Compile Include="Interfaces\ICtlList.cs" />
+    <Compile Include="Interfaces\IDrop.cs" />
+    <Compile Include="Interfaces\IHelpLabel.cs" />
+    <Compile Include="Interfaces\IHistory.cs" />
+    <Compile Include="Interfaces\ILink.cs" />
+    <Compile Include="Interfaces\Interface1.cs" />
+    <Compile Include="Interfaces\ISelectable.cs" />
+    <Compile Include="Interfaces\IService.cs" />
+    <Compile Include="Controllers\FormController.cs" />
+    <Compile Include="Interfaces\IValue.cs" />
+    <Compile Include="Interfaces\IViewSet.cs" />
+    <Compile Include="Interfaces\IViewTree.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controllers\CardControlBase.resx">
+      <DependentUpon>CardControlBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CardTreeForm.resx">
+      <DependentUpon>CardTreeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CardTreeFlowForm.resx">
+      <DependentUpon>CardTreeFlowForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CardFlowForm.resx">
+      <DependentUpon>CardFlowForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CardTreeNForm.resx">
+      <DependentUpon>CardTreeNForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainFormBase.resx">
+      <DependentUpon>MainFormBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OKCancelDatForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OKCancelDatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OKCancelForm.resx">
+      <DependentUpon>OKCancelForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PassPhraseForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PassPhraseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Images.cs" />
+    <Compile Include="Services\DropDownService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="BOF_key.snk" />
+    <None Include="Resources\ac0036-16.png" />
+    <None Include="Resources\40117240.wait_16.gif" />
+    <None Include="Resources\40117240.wait_24.gif" />
+    <None Include="Resources\40117240.wait_40.gif" />
+    <None Include="Resources\16_export.gif" />
+    <Content Include="Resources\16_find.gif" />
+    <None Include="Resources\16_save.gif" />
+    <None Include="Resources\16_info.gif" />
+    <Content Include="Resources\1C.ico" />
+    <Content Include="Resources\Appl.ico" />
+    <None Include="Resources\back.ico" />
+    <None Include="Resources\Application.ico" />
+    <None Include="Resources\application_tile_horizontal.png" />
+    <None Include="Resources\application_tile_vertical.png" />
+    <None Include="Resources\application_cascade.png" />
+    <None Include="Resources\application_delete.png" />
+    <Content Include="Resources\BlueArrow.ico" />
+    <None Include="Resources\cblue.ico" />
+    <None Include="Resources\cdel2.ico" />
+    <None Include="Resources\cgreen.ico" />
+    <None Include="Resources\briefcase.ico" />
+    <None Include="Resources\Calendar Day.ico" />
+    <None Include="Resources\Checked1.ico" />
+    <None Include="Resources\chest.ico" />
+    <None Include="Resources\CascadeWindowsHS.png" />
+    <Content Include="Resources\CloseForm.ico" />
+    <EmbeddedResource Include="2008\OKCancelForm2.resx">
+      <DependentUpon>OKCancelForm2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CtlChooser.resx">
+      <DependentUpon>CtlChooser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CtlTabControl.resx">
+      <DependentUpon>CtlTabControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SysAuditFilters.resx">
+      <DependentUpon>SysAuditFilters.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filters\CtlFilterDateFromTo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CtlFilterDateFromTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CardForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DifferenceForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DifferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExceptionForm.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FilterFormBase.resx">
+      <DependentUpon>FilterFormBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FilterFormFlowBase.resx">
+      <DependentUpon>FilterFormFlowBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OKCancelDatFlowForm.resx">
+      <DependentUpon>OKCancelDatFlowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportViewerForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReportViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RichTextForm.resx">
+      <DependentUpon>RichTextForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DictForm.resx">
+      <DependentUpon>DictForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysAuditEntityForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SysAuditEntityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebBrowserForm.resx">
+      <DependentUpon>WebBrowserForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Calendar.ico" />
+    <None Include="Resources\document.ico" />
+    <None Include="Resources\cab.ico" />
+    <None Include="Resources\checked.ico" />
+    <None Include="Resources\checkuncheck.ico" />
+    <None Include="Resources\CONTACTS.ICO" />
+    <None Include="Resources\Data_Schema.ico" />
+    <None Include="Resources\groupdates.ico" />
+    <None Include="Resources\groupfunds.ico" />
+    <None Include="Resources\groupoutlet.ico" />
+    <None Include="Resources\man.ico" />
+    <None Include="Resources\panelhide.bmp" />
+    <None Include="Resources\panelshow.bmp" />
+    <None Include="Resources\cred.ico" />
+    <None Include="Resources\cyellow.ico" />
+    <None Include="Resources\cyellow2.ico" />
+    <None Include="Resources\down.ico" />
+    <None Include="Resources\exclamation.ico" />
+    <None Include="Resources\cmd-insertKB.gif" />
+    <None Include="Resources\collapse.ico" />
+    <Content Include="Resources\Company.ico" />
+    <None Include="Resources\Contact.ico" />
+    <None Include="Resources\copy.ico" />
+    <None Include="Resources\doc_close.ico" />
+    <None Include="Resources\exc.ico" />
+    <None Include="Resources\DeleteHS.png" />
+    <None Include="Resources\delete.ico" />
+    <None Include="Resources\create.ico" />
+    <None Include="Resources\error.ico" />
+    <Content Include="Resources\cut.ico" />
+    <Content Include="Resources\excel.ico" />
+    <None Include="Resources\expand.ico" />
+    <Content Include="Resources\GroupPanel.png" />
+    <None Include="Resources\icoFilerEdit.ico" />
+    <None Include="Resources\icoFilterForm.ico" />
+    <None Include="Resources\icoFilter.ico" />
+    <None Include="Resources\icoFilerEdit1.ico" />
+    <None Include="Resources\icoFilter2.ico" />
+    <None Include="Resources\icoFilterForm1.ico" />
+    <None Include="Resources\lock.ico" />
+    <None Include="Resources\new.ico" />
+    <None Include="Resources\heart.ico" />
+    <None Include="Resources\inbox_into.ico" />
+    <None Include="Resources\info1.ico" />
+    <None Include="Resources\lock_open.ico" />
+    <None Include="Resources\office-building.ico" />
+    <None Include="Resources\Other 41.ico" />
+    <None Include="Resources\outbox_out.ico" />
+    <None Include="Resources\preferences.ico" />
+    <None Include="Resources\INFO.ICO" />
+    <None Include="Resources\Help.png" />
+    <None Include="Resources\info1.png" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\inf.png" />
+    <Content Include="Resources\mail.ico" />
+    <None Include="Resources\NewDocumentHS.png" />
+    <None Include="Resources\pencil.ico" />
+    <None Include="Resources\none.ico" />
+    <Content Include="Resources\paste.ico" />
+    <Content Include="Resources\print.gif" />
+    <Content Include="Resources\NewDataRecord.png" />
+    <Content Include="Resources\Dots3.ico" />
+    <Content Include="Resources\DoubleArrow.ico" />
+    <Content Include="Resources\DownArrow.bmp" />
+    <Content Include="Resources\DownArrow.ico" />
+    <Content Include="Resources\GreenArrow.ico" />
+    <Content Include="Resources\LeftBottomCorner.ico" />
+    <Content Include="Resources\LeftTopCorner.ico" />
+    <None Include="Resources\other.ico" />
+    <None Include="Resources\page_L1.gif" />
+    <None Include="Resources\page_r1.gif" />
+    <Content Include="Resources\pio_docspreview.ico" />
+    <None Include="Resources\pio_docspreview1.ico" />
+    <Content Include="Resources\pio_docsprint.ico" />
+    <Content Include="Resources\PreviewItem.png" />
+    <Content Include="Resources\Filter.png" />
+    <None Include="Resources\folderopen.ico" />
+    <None Include="Resources\Folder.ico" />
+    <None Include="Resources\Printer Search.ico" />
+    <Content Include="Resources\printer.ico" />
+    <None Include="Resources\red.ico" />
+    <None Include="Resources\Printer1.ico" />
+    <None Include="Resources\pur.ico" />
+    <None Include="Resources\Question.ico" />
+    <None Include="Resources\red1.ico" />
+    <None Include="Resources\question2.ico" />
+    <Content Include="Resources\Refresh.ico" />
+    <Content Include="Resources\Report.ico" />
+    <Content Include="Resources\resize_left.bmp" />
+    <Content Include="Resources\resize_right.bmp" />
+    <None Include="Resources\rptbtn_off_right.gif" />
+    <None Include="Resources\rptbtn_on_left.gif" />
+    <Content Include="Resources\Select.ico" />
+    <None Include="Resources\wait.gif" />
+    <None Include="Resources\Stop.ico" />
+    <None Include="Resources\Symbol Collapse Vertical.ico" />
+    <None Include="Resources\Symbol Expand Vertical.ico" />
+    <None Include="Resources\tra.ico" />
+    <None Include="Resources\Tutorial.ico" />
+    <None Include="Resources\Unchecked1.ico" />
+    <None Include="Resources\User 4.ico" />
+    <None Include="Resources\View Doc.ico" />
+    <None Include="Resources\workplace2.ico" />
+    <None Include="Resources\Write.ico" />
+    <Content Include="Resources\sound.ico" />
+    <None Include="Resources\TileWindowsHorizontallyHS.png" />
+    <None Include="Resources\WindowsHS.png" />
+    <None Include="Resources\ThumbnailLoadingHS.png" />
+    <Content Include="Resources\XIcon.bmp" />
+    <Content Include="Resources\XIcon.ico" />
+    <Content Include="Resources\ZoomIn.cur" />
+    <Content Include="Resources\ZoomOut.cur" />
+    <None Include="Resources\warning.ico" />
+    <None Include="Resources\user.ico" />
+    <None Include="Resources\unchecked.ico" />
+    <None Include="Resources\textdoc.ico" />
+    <None Include="Resources\Web_XML.ico" />
+    <None Include="Resources\RolledBack.bmp" />
+    <None Include="Resources\SuccessComplete.bmp" />
+    <None Include="Controls\Specifications.doc" />
+    <None Include="Resources\NewItem.ico" />
+    <None Include="Resources\EditItem.ico" />
+    <None Include="Resources\DeleteItem.ico" />
+    <None Include="Resources\OpenFolder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BO\BO.csproj">
+      <Project>{2D9E9580-A7DB-47CE-88D4-E3CB87162E9E}</Project>
+      <Name>BO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DA\DA.csproj">
+      <Project>{A6346AA0-4949-448B-9A06-D6B64B6695B2}</Project>
+      <Name>DA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль .NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,5 @@
+C:\Projects\PioFramework\DA\bin\Debug\DA.dll.config
+C:\Projects\PioFramework\DA\bin\Debug\DA.dll
+C:\Projects\PioFramework\DA\bin\Debug\DA.pdb
+C:\Projects\PioFramework\DA\obj\Debug\DA.dll
+C:\Projects\PioFramework\DA\obj\Debug\DA.pdb
