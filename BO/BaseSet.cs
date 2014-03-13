@@ -1201,6 +1201,14 @@ namespace BO
                 Add(val);
             }
         }
+        public void AddRangeDistinct(IEnumerable<TD> vals)
+        {
+            foreach (TD val in vals)
+            {
+                if (!Contains(val))
+                    Add(val);
+            }
+        }
         
         public void Add(TD dat)
         {
